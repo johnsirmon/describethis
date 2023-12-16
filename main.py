@@ -33,20 +33,35 @@ def count_user_python_files(root_dir):
 def determine_virtual_env_manager():
     """Determines what the developer is using to manage the Python virtual environment."""
     virtual_env_manager = None
+
+    # Check if virtualenv is being used
     if 'VIRTUAL_ENV' in os.environ:
         virtual_env_manager = 'virtualenv'
+
+    # Check if conda is being used
     elif 'CONDA_DEFAULT_ENV' in os.environ:
         virtual_env_manager = 'conda'
+
+    # Check if pipenv is being used
     elif 'PIPENV_ACTIVE' in os.environ:
         virtual_env_manager = 'pipenv'
+
+    # Check if poetry is being used
     elif 'POETRY_ACTIVE' in os.environ:
         virtual_env_manager = 'poetry'
+
+    # Check if pyenv is being used
     elif 'PYENV_VERSION' in os.environ:
         virtual_env_manager = 'pyenv'
+
+    # Check if pipx is being used
     elif 'PIPX_ACTIVE' in os.environ:
         virtual_env_manager = 'pipx'
+
+    # Check if venv is being used
     elif 'VENV' in os.environ:
         virtual_env_manager = 'venv'
+
     return virtual_env_manager
 
 virtual_env_manager = determine_virtual_env_manager()
