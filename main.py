@@ -23,6 +23,8 @@ def count_user_python_files(root_dir):
 
     python_file_count = 0
     for r, d, files in os.walk(root_dir):
+        if 'Lib' in r:
+            continue
         for file in files:
             if file.endswith('.py') and not is_virtual_env_file(r, file):
                 python_file_count += 1
