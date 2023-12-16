@@ -3,7 +3,8 @@ import sys
 import pkg_resources
 
 #git add . && git commit -m "updating" && git pull origin main && git push origin main
-#git add . && git commit -m "Updated on $(date "+%Y-%m-%d"): $(git diff --name-only)" && git push origin main
+#FAIL git add . && git commit -m "Updated on $(date "+%Y-%m-%d"): $(git diff --name-only)" && git push origin main
+#git add .; git commit -m ("Updated on " + (Get-Date -Format "yyyy-MM-dd") + ": " + $(git diff --name-only)); git push origin main
 
 
 
