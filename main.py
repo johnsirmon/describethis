@@ -2,6 +2,11 @@ import os
 import sys
 import pkg_resources
 
+#git add . && git commit -m "updating" && git pull origin main && git push origin main
+#git add . && git commit -m "Updated on $(date "+%Y-%m-%d"): $(git diff --name-only)" && git push origin main
+
+
+
 def count_user_python_files(root_dir):
     """Counts the number of Python files created by the user."""
     def is_virtual_env_file(directory, file):
