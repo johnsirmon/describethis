@@ -66,11 +66,13 @@ def determine_virtual_env_manager():
     return virtual_env_manager
 
 def get_non_standard_libraries():
-    """Returns a list of non-standard libraries used in the project."""
+    """Returns a list of non-standard libraries used in the project, excluding pip and setuptools."""
     standard_libs = sys.stdlib_module_names
+    common_libs = {'pip', 'setuptools'}  # Common tools to exclude
     installed_libs = {dist.key for dist in pkg_resources.working_set}
-    non_standard_libs = installed_libs - set(standard_libs)
+    non_standard_libs = (installed_libs - set(standard_libs)) - common_libs
     return non_standard_libs
+
 
 def format_directory_structure(root_dir, max_depth=1):
     """Formats the directory structure for the root."""
