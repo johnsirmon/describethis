@@ -1,4 +1,5 @@
 import os
+import sys
 
 def count_user_python_files(root_dir):
     """Counts the number of Python files created by the user."""
